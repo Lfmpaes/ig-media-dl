@@ -1,0 +1,17 @@
+{
+  "name": "ig-media-dl",
+  "version": "0.0.1",
+  "description": "An API to download Instagram media",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "repository": "https://github.com/Lfmpaes/ig-media-dl.git",
+  "author": "Luiz Fernando Paes",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "prisma": "^4.8.0"
+  }
+}
