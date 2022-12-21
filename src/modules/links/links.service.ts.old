@@ -1,0 +1,15 @@
+import { Injectable } from '@nestjs/common';
+import { LinksRepository } from './links.repository';
+
+@Injectable()
+export class LinksService {
+  constructor(private readonly linksRepository: LinksRepository) {}
+
+  getLinks() {
+    return this.linksRepository.getAllLinks();
+  }
+
+  createLink(link: string) {
+    return this.linksRepository.createLink(link);
+  }
+}
