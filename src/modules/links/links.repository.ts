@@ -5,13 +5,22 @@ import { Prisma, PrismaService } from 'src/modules/prisma';
 export class LinksRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
-  getAllLinks() {
-    return this.prismaService.links.findMany();
+  async getAllLinks() {
+    return await this.prismaService.links.findMany();
   }
 
   getLink(input: Prisma.LinksWhereUniqueInput) {
     return this.prismaService.links.findUnique({
       where: input,
+    });
+  }
+
+  updateLink(id: string, input: Prisma.LinksUpdateInput) {
+    return this.prismaService.links.update({
+      data: input,
+      where: {
+        id: id,
+      },
     });
   }
 
@@ -21,10 +30,10 @@ export class LinksRepository {
     });
   }
 
-  deleteLink(id: string) {
+  deleteLink(input: Prisma.LinksWhereUniqueInput) {
     return this.prismaService.links.delete({
       where: {
-        id,
+        id: input.id,
       },
     });
   }
