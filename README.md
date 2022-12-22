@@ -10,7 +10,7 @@ An API built on [NestJS](https://github.com/nestjs/nest) to request Instagram me
  - Node.js *(recommended LTS / v18.12.1 or above)*
  - Yarn *(using npm may cause some weird issues)*
  - PostgreSQL database *(**igdl** is the default db name, but you can change it in your connection string)*
- - Docker *[optional, check [section](##docker) below]*
+ - Docker *[optional, check [Docker section](https://github.com/Lfmpaes/ig-media-dl#docker) below]*
 
 ## Installation
 Create a `.env` file inside of your root path and add your PostgreSQL URL as the value of key *DATABASE_URL*.
@@ -46,7 +46,7 @@ $ yarn start:prod
 Your API will be available on port 3000. Requests must be directed to `http://<your-domain>:3000/links`.
 
 ## Docker
-There's a Dockerfile included for users to build custom images and deploy their own container. You **must** create a `.env` file following the instructions listed at the beginning of the [Installation](##installation) section before running Docker builder.
+There's a Dockerfile included for users to build custom images and deploy their own container. You **must** create a `.env` file following the instructions listed at the beginning of the [Installation](https://github.com/Lfmpaes/ig-media-dl#installation) section before running Docker builder.
 
 You must also check the Node.js flavour used on your container. By default this app uses the `arm64v8/node:lts` image as its builder and running image. That's Node.js running on a Debian image for ARM processors. If your machine uses a x86 or x64 processor, replace both labels for `node:lts`. You can also use `node:lts-alpine3.16` for a lighter image.
 
