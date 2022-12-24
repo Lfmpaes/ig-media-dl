@@ -1,6 +1,10 @@
+# Trash files
 /.old
 # Keep environment variables out of version control
 .env
+
+# SQLite database
+prisma/dev.db*
 
 # compiled output
 /dist
